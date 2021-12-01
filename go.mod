@@ -21,12 +21,13 @@ require (
 	github.com/onsi/gomega v1.7.1 // indirect
 	github.com/pingcap/errors v0.11.4
 	github.com/pkg/errors v0.8.1
+	github.com/savsgio/atreugo/v11 v11.8.4
 	github.com/sergi/go-diff v1.0.0 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/smartystreets/goconvey v1.6.4 // indirect
 	github.com/ugorji/go v1.1.7 // indirect
 	github.com/urfave/negroni v1.0.0
-	github.com/valyala/fasthttp v1.6.0
+	github.com/valyala/fasthttp v1.31.0
 	github.com/xeipuuv/gojsonschema v1.2.0 // indirect
 	github.com/yalp/jsonpath v0.0.0-20180802001716-5cc68e5049a0 // indirect
 	github.com/yudai/gojsondiff v1.0.0 // indirect
