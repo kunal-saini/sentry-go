@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/getsentry/sentry-go"
-	sentryatreugo "github.com/getsentry/sentry-go/atreugo"
+	sentryatreugo "github.com/kunal-saini/sentry-go/atreugo"
 	"github.com/savsgio/atreugo/v11"
 	"net/http"
 	"time"
