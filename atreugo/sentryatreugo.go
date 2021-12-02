@@ -53,15 +53,16 @@ func New(options Options) *Handler {
 func (h *Handler) Handle(ctx *atreugo.RequestCtx) error {
 	hub := sentry.CurrentHub().Clone()
 	r := convert(ctx)
-
+	httpRequestCtx := r.Context()
+	httpRequestCtx = sentry.SetHubOnContext(httpRequestCtx, hub)
 	if h.tracer {
-		span := sentry.StartSpan(ctx, "atreugo.server",
+		span := sentry.StartSpan(httpRequestCtx, "atreugo.server",
 			sentry.TransactionName(fmt.Sprintf("%s %s", r.Method, r.URL.Path)),
 			sentry.ContinueFromRequest(r),
 		)
-		ctx.SetUserValue(tracerKey, span)
 		r = r.WithContext(span.Context())
 		hub.Scope().SetRequest(r)
+		ctx.SetUserValue(tracerKey, span)
 	}
 
 	hub.Scope().SetRequest(r)
